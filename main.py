@@ -3,7 +3,7 @@
 import os
 import random
 import sys
-import msvcrt
+import functions
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -27,8 +27,8 @@ def main():
         lines = fill_screen()
         print_screen(lines)
         print("\nPress any key to redraw screen, or 'q' to quit.\n")
-        key = msvcrt.getch().decode('utf-8').lower()
-        if key == 'q':
+        pressed_key = functions.get_pressed_key().lower()
+        if pressed_key == 'q':
             sys.exit()
 
 if __name__ == '__main__':
